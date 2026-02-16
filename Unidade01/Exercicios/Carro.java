@@ -46,7 +46,7 @@ public class Carro {
     }
 
     public static void main(String[] args) {
-        CarroAula meuCarro = new CarroAula("Toyota", "Corolla", 2020);
+        Carro meuCarro = new Carro("Toyota", "Corolla", 2020);
         System.out.println("Marca: " + meuCarro.getMarca());
         System.out.println("Modelo: " + meuCarro.getModelo());
         System.out.println("Ano: " + meuCarro.getAno());
