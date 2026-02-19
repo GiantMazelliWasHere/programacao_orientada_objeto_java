@@ -1,0 +1,15 @@
+{
+    "java.project.sourcePaths": [
+        "Unidade03/Exercicios/Exercicio.Temperatura",
+        "Unidade03/Exercicios/Exercicio.Idade",
+        "Unidade03/Exercicios/Exercicio.DoisNumeros",
+        "Unidade03/Exercicios/Exercicio.Divisao",
+        "Unidade03/Exercicios/Exercicio.Arquivo",
+        "Unidade03\\Exercicios\\Exercicio.Conversao",
+        "Unidade03\\Exercicios\\Exercicio.Saldo",
+        "Unidade03\\Exercicios\\Exercicio.Senha",
+        "Unidade03\\Exercicios\\Exercicio.Transferencia",
+        "Unidade03\\Exercicios\\Exercicio.DivisaoInteira"
+    ],
+    "java.project.referencedLibraries": []
+}
