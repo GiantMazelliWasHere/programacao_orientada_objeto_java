@@ -8,7 +8,13 @@ public class Peixe extends Animal {
 
     @Override
     public void emitirSom() {
-        System.out.println("O peixe está fazendo bolhas.");
+        System.out.println("O peixe " + getNome() + " está fazendo bolhas.");
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Tipo de água: " + tipoAgua);
     }
 
     public String getTipoAgua() {

@@ -1,8 +1,8 @@
 public class ContaPoupanca extends ContaBancaria {
     private double taxaRendimento;
 
-    public ContaPoupanca(String nomeTitular, double saldo, String numeroConta, double taxaRendimento) {
-        super(nomeTitular, saldo, numeroConta);
+    public ContaPoupanca(String nomeTitular, double saldo, String numeroConta, int limite, double taxaRendimento) {
+        super(nomeTitular, saldo, numeroConta, limite);
         this.taxaRendimento = taxaRendimento;
     }
 

@@ -9,7 +9,7 @@ public class Moto extends Veiculo {
     @Override
     public void exibirInformacoes() {
         super.exibirInformacoes();
-        System.out.println("Cilindradas: " + cilindradas);
+        System.out.println("Cilindradas: " + cilindradas + "cc");
     }
 
     public void acelerar() {

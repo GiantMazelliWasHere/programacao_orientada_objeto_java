@@ -2,15 +2,21 @@ public class ContaBancaria {
     private String nomeTitular;
     private double saldo;
     private String numeroConta;
+    private int limite;
 
-    public ContaBancaria(String nomeTitular, double saldo, String numeroConta) {
+    public ContaBancaria(String nomeTitular, double saldo, String numeroConta, int limite) {
         this.nomeTitular = nomeTitular;
         this.saldo = saldo;
         this.numeroConta = numeroConta;
+        this.limite = limite;
     }
 
     public void depositar(double valor) {
-        saldo += valor;
+        if (valor > 0 && valor <= limite) {
+            saldo += valor;
+        } else {
+            System.out.println("Valor de depósito inválido. O valor deve ser positivo e dentro do limite.");
+        }
     }
 
     public void aplicarJuros() {
@@ -43,5 +49,17 @@ public class ContaBancaria {
 
     public void setNumeroConta(String numeroConta) {
         this.numeroConta = numeroConta;
+    }
+
+    public int getLimite() {
+        return limite;
+    }
+
+    public void setLimite(int limite) {
+        if (limite >= 0) {
+            this.limite = limite;
+        } else {
+            System.out.println("Limite inválido. O limite deve ser um valor positivo.");
+        }
     }
 }

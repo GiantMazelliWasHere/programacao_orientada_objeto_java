@@ -8,7 +8,13 @@ public class Mamifero extends Animal {
 
     @Override
     public void emitirSom() {
-        System.out.println("O mamífero está gritando.");
+        System.out.println("O mamífero " + getNome() + " está fazendo um som característico desse tipo de mamífero.");
+    }
+
+    @Override
+    public void exibirInformacoes() {
+        super.exibirInformacoes();
+        System.out.println("Cor do pelo: " + corPelo);
     }
 
     public String getCorPelo() {

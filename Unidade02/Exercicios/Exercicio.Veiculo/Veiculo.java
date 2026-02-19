@@ -36,6 +36,10 @@ public class Veiculo {
     }
 
     public void setAno(int ano) {
-        this.ano = ano;
+        if (ano > 0) {
+            this.ano = ano;
+        } else {
+            System.out.println("Ano inválido!");
+        }
     }
 }

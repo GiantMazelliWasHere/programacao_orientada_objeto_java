@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Exemplo08 {
+public class ExemploAnimal {
     public static void main(String[] args) {
         ArrayList<Animal> animais = new ArrayList<>();
 
@@ -19,9 +19,7 @@ public class Exemplo08 {
         animais.add(peixe2);
 
         for (Animal animal : animais) {
-            System.out.println("Nome: " + animal.getNome());
-            System.out.println("Idade: " + animal.getIdade());
-            System.out.println("Espécie: " + animal.getEspecie());
+            animal.exibirInformacoes();
             animal.emitirSom();
             System.out.println();
         }

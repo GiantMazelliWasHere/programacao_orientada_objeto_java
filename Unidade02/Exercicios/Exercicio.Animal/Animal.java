@@ -13,6 +13,12 @@ public class Animal {
         System.out.println("O animal está emitindo um som.");
     }
 
+    public void exibirInformacoes() {
+        System.out.println("Nome: " + nome);
+        System.out.println("Idade: " + idade);
+        System.out.println("Espécie: " + especie);
+    }
+
     public String getNome() {
         return nome;
     }
@@ -26,7 +32,11 @@ public class Animal {
     }
 
     public void setIdade(int idade) {
-        this.idade = idade;
+        if (idade > 0) {
+            this.idade = idade;
+        } else {
+            System.out.println("Idade inválida. A idade deve ser um número positivo.");
+        }
     }
 
     public String getEspecie() {
