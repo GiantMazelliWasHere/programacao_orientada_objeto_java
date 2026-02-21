@@ -448,7 +448,7 @@ public class Main {
                 System.out.println();
                 
                 System.out.println("Clientes cadastrados:");
-                mostrarInformacoes(4);;
+                mostrarInformacoes(4);
                 
                 System.out.println("Selecione um cliente para receber a recomendação de veículos:");
                 Pessoa comprador = clientes.get(scanner.nextInt() - 1);
@@ -465,7 +465,7 @@ public class Main {
                         case 1:
                             System.out.println("Recomendações de Carros para " + comprador.getNome() + ":");
                             for (Carro carro : carros) {
-                                if (comprador.getAltura() >= carro.getAltura() && comprador.getPeso() >= carro.getCapacidadeCarga()) {
+                                if (comprador.getAltura() >= carro.getAltura() && comprador.getPeso() <= carro.getCapacidadeCarga()) {
                                     System.out.println("- " + carro.getModelo() + " - Ano: " + carro.getAno());
                                 } else {
                                     if (comprador.getAltura() < carro.getAltura()) {
@@ -479,7 +479,7 @@ public class Main {
                         case 2:
                             System.out.println("Recomendações de Motos para " + comprador.getNome() + ":");
                             for (Moto moto : motos) {
-                                if (comprador.getAltura() >= moto.getAltura() && comprador.getPeso() >= moto.getCapacidadeCarga()) {
+                                if (comprador.getAltura() >= moto.getAltura() && comprador.getPeso() <= moto.getCapacidadeCarga()) {
                                     System.out.println("- " + moto.getModelo() + " - Ano: " + moto.getAno());
                                 } else {
                                     if (comprador.getAltura() < moto.getAltura()) {
@@ -493,7 +493,7 @@ public class Main {
                         case 3:
                             System.out.println("Recomendações de Vans para " + comprador.getNome() + ":");
                             for (Van van : vans) {
-                                if (comprador.getAltura() >= van.getAltura() && comprador.getPeso() >= van.getCapacidadeCarga()) {
+                                if (comprador.getAltura() >= van.getAltura() && comprador.getPeso() <= van.getCapacidadeCarga()) {
                                     System.out.println("- " + van.getModelo() + " - Ano: " + van.getAno());
                                 } else {
                                     if (comprador.getAltura() < van.getAltura()) {
