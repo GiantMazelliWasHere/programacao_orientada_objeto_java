@@ -73,8 +73,8 @@ public class Main {
         scanner.close();
     }
 
-    private static void mostrarInformacoes(int escolha) {
-        switch (escolha) {
+    private static void mostrarInformacoes(int opcao) {
+        switch (opcao) {
             case 1:
                 if (!carros.isEmpty()) {
 
@@ -154,7 +154,7 @@ public class Main {
         escolha = scanner.nextInt();
         scanner.nextLine();
 
-        if(escolha > 2){
+        if(escolha > 3){
             throw new InputMismatchException();
         }
         
@@ -341,6 +341,8 @@ public class Main {
 
     private static void cadastrarCliente(Scanner scanner) {
         try{
+            scanner.nextLine();
+
             System.out.println("### Cadastro de Clientes ###");
 
             System.out.println("Digite o nome do cliente:");
@@ -369,7 +371,7 @@ public class Main {
 
             Pessoa novoCliente = new Pessoa(nome, idade, endereco, telefone, email, altura, peso);
             clientes.add(novoCliente);
-            System.out.println("O(A) cliente de " + nome + " cadastrado(a) com sucesso!");
+            System.out.println("Cliente " + nome + " cadastrado com sucesso!");
         } catch (InputMismatchException e) {
             System.out.println("Erro: Entrada inválida. Por gentileza certifique-se de inserir os dados corretamente.");
             scanner.nextLine();
@@ -389,6 +391,7 @@ public class Main {
                 System.out.println("Veículo: " + venda.getVeiculo().getModelo() + " - " + venda.getVeiculo().getAno());
                 System.out.println("Comprador: " + venda.getComprador().getNome() + " - " + venda.getComprador().getTelefone());
                 System.out.println("Valor da Venda: R$ " + venda.getValorVenda());
+                System.out.println("Preço do Veículo: R$ " + venda.getVeiculo().getPreco());
                 rendimento(venda.getValorVenda(), venda.getVeiculo().getPreco());
                 System.out.println("--------------------------------------------------------------------------------------");
                 System.out.println();
@@ -464,42 +467,46 @@ public class Main {
                     switch (escolha) {
                         case 1:
                             System.out.println("Recomendações de Carros para " + comprador.getNome() + ":");
+                            int x = 1;
                             for (Carro carro : carros) {
-                                if (comprador.getAltura() >= carro.getAltura() && comprador.getPeso() <= carro.getCapacidadeCarga()) {
-                                    System.out.println("- " + carro.getModelo() + " - Ano: " + carro.getAno());
+                                if (comprador.getAltura() <= carro.getAltura() && comprador.getPeso() <= carro.getCapacidadeCarga()) {
+                                    System.out.println(x + ". " + carro.getModelo() + " - Ano: " + carro.getAno());
+                                    x++;
                                 } else {
-                                    if (comprador.getAltura() < carro.getAltura()) {
-                                        throw new AlturaException("Não há carros disponíveis com altura compatível para o comprador.");
-                                    } else if (comprador.getPeso() < carro.getCapacidadeCarga()) {
-                                        throw new PesoException("Não há carros com capacidade de carga compatível para o comprador.");
+                                    if (comprador.getAltura() > carro.getAltura()) {
+                                        throw new AlturaException("Não há mais carros disponíveis com altura compatível para o comprador.");
+                                    } else if (comprador.getPeso() > carro.getCapacidadeCarga()) {
+                                        throw new PesoException("Não há mais carros com capacidade de carga compatível para o comprador.");
                                     }
                                 }
                             }
                             break;
                         case 2:
                             System.out.println("Recomendações de Motos para " + comprador.getNome() + ":");
+                            int y = 1;
                             for (Moto moto : motos) {
-                                if (comprador.getAltura() >= moto.getAltura() && comprador.getPeso() <= moto.getCapacidadeCarga()) {
-                                    System.out.println("- " + moto.getModelo() + " - Ano: " + moto.getAno());
+                                if (comprador.getPeso() <= moto.getCapacidadeCarga()) {
+                                    System.out.println(y + ". " + moto.getModelo() + " - Ano: " + moto.getAno());
+                                    y++;
                                 } else {
-                                    if (comprador.getAltura() < moto.getAltura()) {
-                                        throw new AlturaException("Não há motos disponíveis com altura compatível para o comprador.");
-                                    } else if (comprador.getPeso() < moto.getCapacidadeCarga()) {
-                                        throw new PesoException("Não há motos com capacidade de carga compatível para o comprador.");
+                                    if (comprador.getPeso() > moto.getCapacidadeCarga()) {
+                                        throw new PesoException("Não há mais motos com capacidade de carga compatível para o comprador.");
                                     }
                                 }
                             }
                             break;
                         case 3:
                             System.out.println("Recomendações de Vans para " + comprador.getNome() + ":");
+                            int z = 1;
                             for (Van van : vans) {
-                                if (comprador.getAltura() >= van.getAltura() && comprador.getPeso() <= van.getCapacidadeCarga()) {
-                                    System.out.println("- " + van.getModelo() + " - Ano: " + van.getAno());
+                                if (comprador.getAltura() <= van.getAltura() && comprador.getPeso() <= van.getCapacidadeCarga()) {
+                                    System.out.println(z + ". " + van.getModelo() + " - Ano: " + van.getAno());
+                                    z++;
                                 } else {
-                                    if (comprador.getAltura() < van.getAltura()) {
-                                        throw new AlturaException("Não há vans disponíveis com altura compatível para o comprador.");
-                                    } else if (comprador.getPeso() < van.getCapacidadeCarga()) {
-                                        throw new PesoException("Não há vans com capacidade de carga compatível para o comprador.");
+                                    if (comprador.getAltura() > van.getAltura()) {
+                                        throw new AlturaException("Não há mais vans disponíveis com altura compatível para o comprador.");
+                                    } else if (comprador.getPeso() > van.getCapacidadeCarga()) {
+                                        throw new PesoException("Não há mais vans com capacidade de carga compatível para o comprador.");
                                     }
                                 }
                             }
