@@ -47,7 +47,7 @@ public class Venda {
 
     public void setValorVenda(double valorVenda) {
         if (valorVenda < 0) {
-            throw new IllegalArgumentException("Valor de venda inválido");
+            throw new IllegalArgumentException("O valor da venda deve ser positivo e maior que zero.");
         }
         this.valorVenda = valorVenda;
     }

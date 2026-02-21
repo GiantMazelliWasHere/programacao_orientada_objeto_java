@@ -3,8 +3,8 @@ public class Moto extends Veiculo {
     private boolean temPartidaEletrica;
     private String categoria;
 
-    public Moto(String marca, String modelo, int ano, String cor, double preco, int velocidade,int cilindradas, boolean temPartidaEletrica, String categoria) {
-        super(marca, modelo, ano, cor, preco, velocidade);
+    public Moto(String marca, String modelo, int ano, String cor, double preco, int velocidade, double altura, double capacidadeCarga, int cilindradas, boolean temPartidaEletrica, String categoria) {
+        super(marca, modelo, ano, cor, preco, velocidade, altura, capacidadeCarga);
         this.cilindradas = cilindradas;
         this.temPartidaEletrica = temPartidaEletrica;
         this.categoria = categoria;
@@ -36,7 +36,7 @@ public class Moto extends Veiculo {
 
     public void setCilindradas(int cilindradas) {
         if (cilindradas < 0) {
-            throw new IllegalArgumentException("Cilindradas inválidas");
+            throw new IllegalArgumentException("As cilindradas de uma moto devem ser maiores que zero.");
         }
         this.cilindradas = cilindradas;
     }

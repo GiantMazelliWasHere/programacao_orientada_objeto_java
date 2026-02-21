@@ -28,7 +28,7 @@ public class Pessoa {
         System.out.println("Endereço: " + endereco);
         System.out.println("Telefone: " + telefone);
         System.out.println("Email:    " + email);
-        System.out.println("Altura:   " + altura + " m");
+        System.out.println("Altura:   " + altura + " cm");
         System.out.println("Peso:     " + peso + " kg");
     }
 
@@ -66,7 +66,7 @@ public class Pessoa {
 
     public void setIdade(int idade) {
         if (idade < 0) {
-            throw new IllegalArgumentException("Idade inválida");
+            throw new IllegalArgumentException("A idade de uma pessoa não pode ser negativa ou zero.");
         }
         this.idade = idade;
     }
@@ -85,14 +85,14 @@ public class Pessoa {
 
     public void setAltura(double altura) {
         if (altura < 0) {
-            throw new IllegalArgumentException("Altura inválida");
+            throw new IllegalArgumentException("A altura de uma pessoa não pode ser negativa ou zero.");
         }
         this.altura = altura;
     }
 
     public void setPeso(double peso) {
         if (peso < 0) {
-            throw new IllegalArgumentException("Peso inválido");
+            throw new IllegalArgumentException("O peso de uma pessoa não pode ser negativo ou zero.");
         }
         this.peso = peso;
     }

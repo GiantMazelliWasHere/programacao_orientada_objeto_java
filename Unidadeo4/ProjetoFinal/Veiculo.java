@@ -4,14 +4,18 @@ public class Veiculo implements InterfaceVeiculo {
     private int ano;
     private String cor;
     private double preco;
-    private int velocidade;
+    private int velocidade = 0;
+    private double altura;
+    private double capacidadeCarga;
 
-    public Veiculo(String marca, String modelo, int ano, String cor, double preco, int velocidade) {
+    public Veiculo(String marca, String modelo, int ano, String cor, double preco, int velocidade, double altura, double capacidadeCarga) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.cor = cor;
         this.preco = preco;
+        this.altura = altura;
+        this.capacidadeCarga = capacidadeCarga;
         this.velocidade = velocidade;
     }
 
@@ -50,6 +54,8 @@ public class Veiculo implements InterfaceVeiculo {
         System.out.println("Ano:      " + ano);
         System.out.println("Cor:      " + cor);
         System.out.println("Preço: R$ " + preco);
+        System.out.println("Altura:   " + altura + " cm");
+        System.out.println("Capacidade de Carga: " + capacidadeCarga + " kg");
     }
 
     public String getMarca() {
@@ -86,7 +92,7 @@ public class Veiculo implements InterfaceVeiculo {
 
     public void setAno(int ano) {
         if (ano < 0) {
-            throw new IllegalArgumentException("Ano inválido");
+            throw new IllegalArgumentException("O ano de fabricação de um veículo deve ser maior que zero.");
         }
         this.ano = ano;
     }
@@ -97,8 +103,29 @@ public class Veiculo implements InterfaceVeiculo {
 
     public void setPreco(double preco) {
         if (preco < 0) {
-            throw new IllegalArgumentException("Preço inválido");
+            throw new IllegalArgumentException("O preço de um veículo deve ser maior que zero.");
         }
         this.preco = preco;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public double getCapacidadeCarga() {
+        return capacidadeCarga;
+    }
+    public void setAltura(double altura) {
+        if (altura < 0) {
+            throw new IllegalArgumentException("A altura de um veículo deve ser maior que zero.");
+        }
+        this.altura = altura;
+    }
+
+    public void setCapacidadeCarga(double capacidadeCarga) {
+        if (capacidadeCarga < 0) {
+            throw new IllegalArgumentException("A capacidade de carga de um veículo deve ser maior que zero.");
+        }
+        this.capacidadeCarga = capacidadeCarga;
     }
 }
