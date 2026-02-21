@@ -89,7 +89,7 @@ public class Main {
                     System.out.println("---------------------------------------------------------");
                     System.out.println();
                 } else {
-                    System.out.println("Nenhum veículo disponível para exibir.");
+                    System.out.println("Nenhum carro disponível para exibir.");
                 }
                 break;
             case 2:
@@ -105,7 +105,7 @@ public class Main {
                     System.out.println("---------------------------------------------------------");
                     System.out.println();
                 } else {
-                    System.out.println("Nenhum veículo disponível para exibir.");
+                    System.out.println("Nenhuma moto disponível para exibir.");
                 }
                 break;
             case 3:
@@ -121,7 +121,7 @@ public class Main {
                     System.out.println("---------------------------------------------------------");
                     System.out.println();
                 } else {
-                    System.out.println("Nenhum veículo disponível para exibir.");
+                    System.out.println("Nenhuma van disponível para exibir.");
                 }
                 break;
 
@@ -391,7 +391,7 @@ public class Main {
                 System.out.println("Veículo: " + venda.getVeiculo().getModelo() + " - " + venda.getVeiculo().getAno());
                 System.out.println("Comprador: " + venda.getComprador().getNome() + " - " + venda.getComprador().getTelefone());
                 System.out.println("Valor da Venda: R$ " + venda.getValorVenda());
-                System.out.println("Preço do Veículo: R$ " + venda.getVeiculo().getPreco());
+                System.out.println("Valor da Compra: R$ " + venda.getVeiculo().getPreco());
                 rendimento(venda.getValorVenda(), venda.getVeiculo().getPreco());
                 System.out.println("--------------------------------------------------------------------------------------");
                 System.out.println();
