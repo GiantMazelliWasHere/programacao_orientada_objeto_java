@@ -11,12 +11,7 @@ public class Main {
     private static List<Pessoa> clientes = new ArrayList<>();
     private static List<Venda> vendas = new ArrayList<>();
     public static void main(String[] args) {
-        //Veiculo veiculo1 = new Veiculo("Chevrolet", "Onix", 2020, "Prata", 124000.00, 0);
-        //Carro carro1 = new Carro("Volkswagen", "Golf", 2019, "Preto", 90000.00, 0, 4, "Gasolina", 350);
-        //Moto moto1 = new Moto("Honda", "CB500F", 2021, "Vermelha", 25000.00, 0, 500, true, "Naked");
-        //Pessoa pessoa1 = new Pessoa("Eduardo", 30, "Rua das Flores, 123", "(11) 98765-4321", "Eduardo.mz@email.com", 1.75, 70.0);
-        //Venda venda1 = new Venda(carro1, pessoa1, 50000.00, LocalDateTime.now());
-
+        
         Scanner scanner = new Scanner(System.in);
         int escolha = 0;
         do {
